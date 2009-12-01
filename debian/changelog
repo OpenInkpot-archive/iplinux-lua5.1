@@ -1,0 +1,5 @@
+lua5.1 (5.1.4-1) asimov; urgency=low
+  
+  * First build for IPlinux.
+
+ -- Mikhail Gusarov <dottedmag@dottedmag.net>  Tue, 01 Dec 2009 06:44:20 +0600

@@ -1,0 +1,46 @@
+#!/usr/bin/make -f
+
+include /usr/share/quilt/quilt.make
+
+clean: patch clean-patched unpatch
+
+clean-patched:
+	dh_testdir
+	dh_testroot
+
+	$(MAKE) iplinux_clean
+
+	dh_clean
+
+build: patch
+	dh_testdir
+
+	$(MAKE) iplinux CC=$(DEB_HOST_GNU_TYPE)-gcc
+
+install:
+	dh_testdir
+	dh_testroot
+	dh_prep
+
+	dh_installdirs
+	dh_install
+
+binary-indep: install
+
+binary-arch: install
+	dh_testdir
+	dh_testroot
+
+	dh_link
+	dh_strip --dbg-package=liblua5.1-0-dbg
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_builddeb
+
+binary: binary-arch binary-indep
+
+.PHONY: clean build install binary-arch binary

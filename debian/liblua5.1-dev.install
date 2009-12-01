@@ -1,0 +1,4 @@
+src/lua.h usr/include
+src/luaconf.h usr/include
+src/lualib.h usr/include
+src/lauxlib.h usr/include
