@@ -1,3 +1,9 @@
+lua5.1 (5.1.4-2) zelazny; urgency=low
+
+  * Add pkg-config file.
+
+ -- Mikhail Gusarov <dottedmag@dottedmag.net>  Thu, 14 Jan 2010 09:36:29 +0600
+
 lua5.1 (5.1.4-1) asimov; urgency=low
   
   * First build for IPlinux.
